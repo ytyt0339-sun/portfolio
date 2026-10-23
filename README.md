@@ -5,6 +5,16 @@
 - 배포 URL: https://ytyt0339-sun.github.io/portfolio/
 - 저장소 URL: https://github.com/ytyt0339-sun/portfolio
 
+## 스크린샷
+
+| 데스크톱 (1440px) | 다크 모드 |
+|---|---|
+| ![데스크톱 화면](images/screenshots/desktop.png) | ![다크 모드 화면](images/screenshots/darkmode.png) |
+
+| 모바일 (390px) | 모바일 햄버거 메뉴 |
+|---|---|
+| ![모바일 화면](images/screenshots/mobile.png) | ![모바일 햄버거 메뉴 열림](images/screenshots/mobile-menu.png) |
+
 ## 폴더 구조
 
 ```
