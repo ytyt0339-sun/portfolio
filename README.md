@@ -2,8 +2,8 @@
 
 순수 HTML / CSS / JavaScript(외부 라이브러리 없음)로 만든 반응형 포트폴리오 웹사이트입니다.
 
-- 배포 URL: `https://ytyt0339-sun.github.io/portfolio/` (GitHub Pages 배포 후 실제 주소로 수정)
-- 저장소 URL: `https://github.com/ytyt0339-sun/portfolio`
+- 배포 URL: https://ytyt0339-sun.github.io/portfolio/
+- 저장소 URL: https://github.com/ytyt0339-sun/portfolio
 
 ## 폴더 구조
 
