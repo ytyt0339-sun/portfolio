@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sun의 프론트엔드 포트폴리오 - HTML, CSS, JavaScript">
+  <title>Sun | Portfolio</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- 상단 고정 헤더: 로고(왼쪽) + 메뉴(오른쪽) -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="주 메뉴">
+      <a href="#hero" class="nav__logo">Sun<span>.dev</span></a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 전환">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        </button>
+        <button type="button" class="hamburger" id="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: 인사말 + CTA -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Hello! 👋</p>
+        <h1 class="hero__title">I am <strong>Sun</strong>.</h1>
+        <p class="hero__desc">이벤트 → 상태 → 렌더링의 흐름을 이해하며, 순수 HTML/CSS/JavaScript로 웹을 만드는 프론트엔드 개발자입니다.</p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--outline">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About: 자기소개 + 프로필 이미지 -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section__title">About Me</h2>
+        <div class="about__content">
+          <img src="images/profile.svg" alt="노트북 앞에서 웃고 있는 Sun의 프로필 일러스트" class="about__img" width="240" height="240">
+          <div class="about__text">
+            <p>코디세이에서 웹 개발을 공부하고 있는 <strong>Sun</strong>입니다. 리눅스, Docker, Git 같은 개발 환경부터 시작해 이제는 브라우저가 이해하는 언어인 HTML, CSS, JavaScript를 깊이 있게 다루고 있습니다.</p>
+            <p>프레임워크를 쓰기 전에 DOM 조작과 이벤트 처리, 비동기 통신의 원리를 직접 구현해 보는 것을 중요하게 생각합니다. 다음 목표는 React입니다.</p>
+            <ul class="about__facts">
+              <li><span>📍</span> 대한민국</li>
+              <li><span>🎓</span> 코디세이 교육과정</li>
+              <li><span>💡</span> 관심사: 웹 프론트엔드, 개발 환경</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills: 기술 스택 목록 -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__grid">
+          <article class="skill-card">
+            <h3 class="skill-card__title">Frontend</h3>
+            <ul class="skill-card__list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>반응형 웹</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3 class="skill-card__title">Tools</h3>
+            <ul class="skill-card__list">
+              <li>Git / GitHub</li>
+              <li>VS Code</li>
+              <li>Docker</li>
+              <li>Linux CLI</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3 class="skill-card__title">Learning</h3>
+            <ul class="skill-card__list">
+              <li>React</li>
+              <li>Python</li>
+              <li>REST API</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects: GitHub API로 동적 렌더링 -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <h2 class="section__title">Projects</h2>
+        <p class="section__desc">GitHub API에서 저장소 목록을 실시간으로 불러옵니다.</p>
+
+        <div class="projects__toolbar">
+          <label for="repo-search" class="projects__label">저장소 검색</label>
+          <input type="search" id="repo-search" class="input" placeholder="저장소 이름 또는 언어로 검색">
+        </div>
+
+        <!-- 상태 메시지(로딩/에러/빈 상태)가 표시되는 영역 -->
+        <div class="projects__status" id="projects-status" role="status" aria-live="polite"></div>
+        <div class="projects__grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- Contact: 문의 폼 -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__desc">궁금한 점이 있다면 편하게 메시지를 남겨주세요.</p>
+
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="input" placeholder="홍길동">
+            <p class="form-group__error" id="name-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="input" placeholder="you@example.com">
+            <p class="form-group__error" id="email-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span class="form-group__counter" id="message-counter">0 / 500</span></label>
+            <textarea id="message" name="message" class="input" rows="5" maxlength="500" placeholder="10자 이상 입력해주세요."></textarea>
+            <p class="form-group__error" id="message-error"></p>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Send</button>
+          <p class="contact__result" id="form-result" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: 저작권 + 소셜 링크 -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year">2026</span> Sun. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="https://github.com/ytyt0339-sun" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="mailto:hello@example.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로 이동">↑</button>
+</body>
+</html>
