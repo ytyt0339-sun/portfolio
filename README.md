@@ -43,9 +43,13 @@ portfolio/
 
 ## 이벤트 → 상태 → 렌더링 흐름 예시
 
-1. **다크 모드**: `click` → `currentTheme` 변경 + localStorage 저장 → `data-theme` 속성/아이콘 갱신
-2. **저장소 검색**: `input` → `searchQuery` 변경 → `renderRepos()` 가 `filter` + `map` 으로 카드 다시 그림
-3. **GitHub API**: `loadRepos()` → 로딩 화면 → `fetch` + `await` → 성공 시 `repos` 저장 후 렌더링 / 실패 시 에러 화면
+모든 상태는 `state` 객체 한 곳에 있고 `setState()`로만 바꿉니다. 바뀐 값에 연결된 render 함수만 다시 실행됩니다.
+
+1. **다크 모드**: `click` → `setState({ theme })` + localStorage 저장 → `renderTheme()`가 `data-theme` 속성과 아이콘 갱신
+2. **저장소 검색**: `input` → `setState({ searchQuery })` → `renderProjects()`가 `filter` + `map`으로 카드 다시 그림
+3. **GitHub API**: `loadRepos()` → `repoStatus: 'loading'`(스피너) → `fetch` + `await` → 성공 시 `'success'`(카드) / 실패 시 `'error'`(에러 + 다시 시도)
+
+> 평가 항목별 상세 설명: [docs/EXPLANATION.md](docs/EXPLANATION.md)
 
 ## 실행 방법
 
